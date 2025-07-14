@@ -11,7 +11,7 @@ const getRemote = (remoteURL, options = {}) => {
   if (!remoteURL) {
     // No point warning if everything is overridden
     if (Object.keys(overrides).length !== 4) {
-      console.warn(`Warning: Git remote ${options.remote} was not found`)
+      console.warn(`\x1B[31m警告\x1B[0m:  \x1B[31m未找到 Git 远程仓库名\x1B[0m：\x1B[35m${options.remote}\x1B[0m`)
     }
     return {
       getCommitLink: () => null,
@@ -70,6 +70,7 @@ const getRemote = (remoteURL, options = {}) => {
 
   const url = `${protocol}//${hostname}/${remote.repo}`
   return {
+    repoName: remote.repo,
     getCommitLink: id => `${url}/commit/${id}`,
     getIssueLink: id => `${url}/issues/${id}`,
     getMergeLink: id => `${url}/pull/${id}`,

@@ -9,7 +9,7 @@ const updateLog = (string, clearLine = true) => {
     readline.clearLine(process.stdout)
     readline.cursorTo(process.stdout, 0)
   }
-  process.stdout.write(`auto-changelog: ${string}`)
+  process.stdout.write(`\x1B[36mnbc-auto-changelog\x1B[0m: ${string}`)
 }
 
 const formatBytes = (bytes) => {

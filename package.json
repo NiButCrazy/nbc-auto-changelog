@@ -1,10 +1,10 @@
 {
-  "name": "auto-changelog",
-  "version": "2.5.0",
-  "description": "Command line tool for generating a changelog from git tags and commit history",
+  "name": "nbc-auto-changelog",
+  "version": "1.0.0",
+  "description": "一键生成 CHANGELOG.md 工具，基于开源项目 auto-changelog",
   "main": "./src/index.js",
   "bin": {
-    "auto-changelog": "./src/index.js"
+    "nbc-auto-changelog": "./src/index.js"
   },
   "engines": {
     "node": ">=8.3"
@@ -20,14 +20,14 @@
     "version": "node src/index.js --package && git add CHANGELOG.md",
     "generate-test-data": "cross-env NODE_ENV=test node scripts/generate-test-data.js"
   },
-  "author": "Pete Cook (https://github.com/cookpete)",
-  "homepage": "https://github.com/CookPete/auto-changelog",
+  "author": "Ni But Crazy (https://github.com/NiButCrazy)",
+  "homepage": "https://github.com/NiButCrazy/nbc-auto-changelog",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CookPete/auto-changelog.git"
+    "url": "https://github.com/NiButCrazy/nbc-auto-changelog.git"
   },
   "bugs": {
-    "url": "https://github.com/CookPete/auto-changelog/issues"
+    "url": "https://github.com/NiButCrazy/nbc-auto-changelog/issues"
   },
   "keywords": [
     "auto",
@@ -46,9 +46,8 @@
     "commander": "^7.2.0",
     "handlebars": "^4.7.7",
     "import-cwd": "^3.0.0",
-    "node-fetch": "^2.6.1",
     "parse-github-url": "^1.0.3",
-    "semver": "^7.3.5"
+    "semver": "7.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",

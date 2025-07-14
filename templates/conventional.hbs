@@ -1,5 +1,5 @@
-## Changelog
-
+## 更新日志
+{{init this}}
 {{!--
 Introduction
 • This template tries to follow conventional commits format https://www.conventionalcommits.org/en/v1.0.0/
@@ -23,9 +23,9 @@ Example Definitions
 --}}
 
 
-{{!-- In package.json need to add this to remove label text from the change log output (because the markdown headers are now used to group them).
-   NOTES • Individual brackets have been escaped twice to be Json compliant.
-         • For items that define a scope eg feat(bldAssess): We remove the 1st bracket and then re-add it so we can select the right piece of text
+{{!-- 在package.json中，需要添加此项以从更改日志输出中删除标签文本（因为markdown标头现在用于对它们进行分组）。
+注：为了符合Json标准，单个括号已被转义两次。
+•对于定义范围的项目，例如feat（bldAssess）：我们删除第一个括号，然后重新添加，这样我们就可以选择正确的文本
 {
   "name": "my-awesome-package",
 
@@ -34,21 +34,25 @@ Example Definitions
       "([bB]reaking:)": "",
       "([bB]reaking change:)": "",
       "(^[fF]eat:)": "",
-      "(^[fF]eat\\()": "\\(",
+      "(^[fF]eat\\((.*?)\\):)": "$2: ",
       "(^[fF]ix:)": "",
-      "(^[fF]ix\\()": "\\(",
+      "(^[fF]ix\\((.*?)\\):)": "$2: ",
       "(^[cC]hore:)": "",
-      "(^[cC]hore\\()": "\\(",
+      "(^[cC]hore\\((.*?)\\):)": "$2: ",
       "(^[dD]ocs:)": "",
-      "(^[dD]ocs\\()": "\\(",
+      "(^[dD]ocs\\((.*?)\\):)": "$2: ",
       "(^[rR]efactor:)": "",
-      "(^[rR]efactor\\()": "\\(",
+      "(^[rR]efactor\\((.*?)\\):)": "$2: ",
       "(^[tT]est:)": "",
-      "(^[tT]est\\()": "\\(",
+      "(^[tT]est\\((.*?)\\):)": "$2: ",
       "(^[sS]tyle:)": "",
-      "(^[sS]tyle\\()": "\\(",
+      "(^[sS]tyle\\((.*?)\\):)": "$2: ",
       "(^[pP]erf:)": "",
-      "(^[pP]erf\\()": "\\("
+      "(^[pP]erf\\((.*?)\\):)": "$2: ",
+      "(^[bB]uild:)": "",
+      "(^[bB]uild\\((.*?)\\):)": "$2: ",
+      "(^[iI]18n:)": "",
+      "(^[iI]18n\\((.*?)\\):)": "$2: "
     }
   }
 
@@ -65,70 +69,73 @@ Example Definitions
  | = or
  [aA] = character a or character A
  --}}
-
-
 {{#each releases}}
+    {{Heading this}}
   {{#if href}}
-    ##{{#unless major}}#{{/unless}} [{{title}}]({{href}}) - {{#if tag}} {{niceDate}} {{/if}}
-
+    #{{#unless major}}#{{/unless}} [{{title}}]({{href}}) - {{#if tag}} {{myDate isoDate}} {{else}} {{diff}}{{/if}}
   {{else}}
-    ### {{title}}
+    ## {{title}}
   {{/if}}
-
-
   {{#if summary}}
-    {{summary}}
+      {{summary}}
   {{/if}}
-
   {{#each merges}}
-    - {{#if commit.breaking}}**Breaking change:** {{/if}}{{message}}
+    - {{#if commit.breaking}}**重大更改:** {{/if}}{{message}}
   {{/each}}
-
+  {{!--
   {{#each fixes}}
-    - {{#if commit.breaking}}**Breaking change:** {{/if}}{{commit.subject}}{{#each fixes}}{{/each}}
-  {{/each}}
-
-
+    - {{#if commit.breaking}}**重大更改:** {{/if}}{{commit.message}}{{#each fixes}}{{/each}}
+  {{/each}} --}}
   {{! List commits with 'breaking:' or 'Breaking change:' anywhere in the message under a heading}}
-  {{#commit-list commits heading='#### Breaking Changes :warning:' message='[bB]reaking [cC]hange:|[bB]reaking:' }}
-    - {{subject}} @{{author}}  {{!--[`{{shorthash}}`]({{href}}) --}}
+
+  {{#commit-list commits heading='#### :rotating_light: 重大更改' message='[bB]reaking [cC]hange:|[bB]reaking:' }}
+    - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+    {{moreDetail message}}
   {{/commit-list}}
-
   {{! List commits organised under a heading, but not those already listed in the breaking section }}
-      {{#commit-list commits heading='#### New Features' message='^[fF]eat:|[fF]eat\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} @{{author}} {{!--[`{{shorthash}}`]({{href}}) --}}
+      {{#commit-list commits heading='#### :sparkles: 新功能' message='^[fF]eat:|[fF]eat\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
       {{/commit-list}}
-
-      {{#commit-list commits heading='#### Fixes' message='^[fF]ix:|^[fF]ix\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} @{{author}} {{!--[`{{shorthash}}`]({{href}}) --}}
+      {{#commit-list commits heading='#### :bug: 修复' message='^[fF]ix:|^[fF]ix\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
       {{/commit-list}}
-
-      {{#commit-list commits heading='#### Chores And Housekeeping' message='^[cC]hore:|^[cC]hore\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} @{{author}} {{!--[`{{shorthash}}`]({{href}}) --}}
+      {{#commit-list commits heading='#### :package: 杂项' message='^[cC]hore:|^[cC]hore\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
       {{/commit-list}}
-
-      {{#commit-list commits heading='#### Documentation Changes' message='^[dD]ocs:|^[dD]ocs\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} @{{author}} {{!--[`{{shorthash}}`]({{href}}) --}}
+      {{#commit-list commits heading='#### :book: 文档' message='^[dD]ocs:|^[dD]ocs\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
       {{/commit-list}}
-
-      {{#commit-list commits heading='#### Refactoring and Updates' message='^[rR]efactor:|^[rR]efactor\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} @{{author}} {{!--[`{{shorthash}}`]({{href}}) --}}
+      {{#commit-list commits heading='#### :recycle: 重构' message='^[rR]efactor:|^[rR]efactor\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
       {{/commit-list}}
-
-      {{#commit-list commits heading='#### Changes to Test Assests' message='^[tT]est:|^[tT]est\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} @{{author}} {{!--[`{{shorthash}}`]({{href}}) --}}
+      {{#commit-list commits heading='#### :mega: 测试' message='^[tT]est:|^[tT]est\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
       {{/commit-list}}
-
-      {{#commit-list commits heading='#### Tidying of Code eg Whitespace' message='^[sS]tyle:|^[sS]tyle\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} @{{author}} {{!--[`{{shorthash}}`]({{href}}) --}}
+      {{#commit-list commits heading='#### :books: 样式' message='^[sS]tyle:|^[sS]tyle\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
       {{/commit-list}}
-
-      {{#commit-list commits heading='#### Performance Improvments' message='^[pP]erf:|^[pP]erf\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} @{{author}} {{!--[`{{shorthash}}`]({{href}}) --}}
+      {{#commit-list commits heading='#### :wrench: 依赖 | 构建' message='^[bB]uild:|^[bB]uild\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
       {{/commit-list}}
-
-      {{#commit-list commits heading='#### General Changes' exclude='[bB]reaking [cC]hange:|[bB]reaking:|^[fF]eat:|^[fF]eat\(|^[fF]ix:|^[fF]ix\(|^[cC]hore:|^[cC]hore\(|^[dD]ocs:|^[dD]ocs\(|^[rR]efactor:|^[rR]efactor\(|^[tT]est:|^[tT]est\(|^[sS]tyle:|^[sS]tyle\(|^[pP]erf:|^[pP]erf\('}}
-        - {{subject}} @{{author}} {{!--[`{{shorthash}}`]({{href}}) --}}
+      {{#commit-list commits heading='#### :zap: 优化' message='^[pP]erf:|^[pP]erf\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
+      {{/commit-list}}
+      {{#commit-list commits heading='#### :globe_with_meridians: 国际化' message='^[iI]18n:|^[iI]18n\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
+      {{/commit-list}}
+      {{#commit-list commits heading='#### :cyclone: 整体修改' exclude='[bB]reaking [cC]hange:|[bB]reaking:|^[fF]eat:|^[fF]eat\(|^[fF]ix:|^[fF]ix\(|^[cC]hore:|^[cC]hore\(|^[dD]ocs:|^[dD]ocs\(|^[rR]efactor:|^[rR]efactor\(|^[tT]est:|^[tT]est\(|^[sS]tyle:|^[sS]tyle\(|^[pP]erf:|^[pP]erf\('}}
+        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
       {{/commit-list}}
 
 {{/each}}
