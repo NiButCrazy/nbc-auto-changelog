@@ -25,21 +25,26 @@ const PACKAGE_FILE = 'package.json'
 const PACKAGE_OPTIONS_KEY = 'auto-changelog'
 const PREPEND_TOKEN = '<!-- auto-changelog-above -->'
 
+// 终端颜色格式化
+function f1 (text) {return `\x1B[36m${text}\x1B[0m`}
+function f2 (text) {return `\x1B[33m${text}\x1B[0m`}
+
 const getOptions = async argv => {
+
   const commandOptions = new Command()
-    .option('-o, --output <file>', `输出文件，默认: ${DEFAULT_OPTIONS.output}`)
-    .option('-c, --config <file>', `本地配置文件，默认: ${DEFAULT_OPTIONS.config}`)
-    .option('-t, --template <template>', `选择指定模板，内置 [conventional, compact, keepachangelog, json]，默认: ${DEFAULT_OPTIONS.template}`)
-    .option('-r, --remote <remote>', `指定要用于生成链接的 Git 远程仓库名称，默认: ${DEFAULT_OPTIONS.remote}`)
-    .option('-p, --package [file]', '使用文件中的版本作为最新版本，默认: package.json')
-    .option('-v, --latest-version <version>', '使用指定版本作为最新版本')
-    .option('-u, --unreleased', '包含未发布更改的部分')
-    .option('-l, --commit-limit <count>', `每个版本要显示的最大提交数，默认: ${DEFAULT_OPTIONS.commitLimit}`, parseLimit)
-    .option('-b, --backfill-limit <count>', `填补空的发布版本所需要的提交数量，默认: ${DEFAULT_OPTIONS.backfillLimit}`, parseLimit)
-    .option('--commit-url <url>', '覆盖 commits 的 URL，请使用 {id} 作为 commit 的 ID')
-    .option('-i, --issue-url <url>', '覆盖 issues 的 URL，请使用 {id} 作为 issue 的 ID') // -I kept for back compatibility
-    .option('--merge-url <url>', '覆盖 merges 的 URL，请使用 {id} 作为 merge 的 ID')
-    .option('--compare-url <url>', '覆盖 URL 进行比较，对 标签(tags) 使用 {from} 和 {to}')
+    .option(`-o, --output <file>`, `输出文件，默认: ${f2(DEFAULT_OPTIONS.output)}`)
+    .option(`-c, --config <file>`, `本地配置文件，默认: ${f2(DEFAULT_OPTIONS.config)}`)
+    .option(`-t, --template <template>`, `选择指定模板，内置[${f1('conventional, compact, keepachangelog, json')}]，默认: ${f2(DEFAULT_OPTIONS.template)}`)
+    .option(`-r, --remote <remote>`, `指定要用于生成链接的 Git 远程仓库名称，默认: ${f2(DEFAULT_OPTIONS.remote)}`)
+    .option(`-p, --package [file]`, `使用文件中的版本作为最新版本，默认: ${f2( 'package.json' )}`)
+    .option(`-v, --latest-version <version>`, '使用指定版本作为最新版本')
+    .option(`-u, --unreleased`, '包含未发布更改的部分')
+    .option(`-l, --commit-limit <count>`, `每个版本要显示的最大提交数，默认: ${f2(DEFAULT_OPTIONS.commitLimit)}`, parseLimit)
+    .option(`-b, --backfill-limit <count>`, `填补空的发布版本所需要的提交数量，默认: ${f2(DEFAULT_OPTIONS.backfillLimit)}`, parseLimit)
+    .option(`-i, --issue-url <url>`, `覆盖 issues 的 URL，请使用 ${f1('{id}')} 作为 issue 的 ID`) // -I kept for back compatibility
+    .option('--commit-url <url>', `覆盖 commits 的 URL，请使用 ${f1('{id}')}  作为 commit 的 ID`)
+    .option('--merge-url <url>', `覆盖 merges 的 URL，请使用 ${f1('{id}')}  作为 merge 的 ID`)
+    .option('--compare-url <url>', `覆盖 URL 进行比较，对 标签(tags) 使用 ${f1('{from}')}  和 ${f1('{to}')} `)
     .option('--issue-pattern <regex>', '覆盖提交消息中 issue 的匹配正则表达式')
     .option('--breaking-pattern <regex>', '正则表达式匹配 breaking change commits')
     .option('--merge-pattern <regex>', '为 merge commits 添加自定义正则表达式来匹配')
@@ -50,12 +55,12 @@ const getOptions = async argv => {
     .option('--starting-version <tag>', '指定 changelog 中包含的最早版本')
     .option('--starting-date <yyyy-mm-dd>', '指定 changelog 中包含的最早日期')
     .option('--ending-version <tag>', '指定 changelog 中包含的最新版本')
-    .option('--sort-commits <property>', `排序 commits 通过参数 [relevance, date, date-desc]，默认: ${DEFAULT_OPTIONS.sortCommits}`)
+    .option('--sort-commits <property>', `排序 commits 通过参数[${f1('relevance, date, date-desc')}] ，默认: ${f2(DEFAULT_OPTIONS.sortCommits)}`)
     .option('--release-summary', '使用标记的提交消息正文作为发布摘要')
     .option('--unreleased-only', '仅输出未发布的更改')
     .option('--hide-empty-releases', '隐藏空的发布版本')
     .option('--hide-credit', '隐藏 nbc-auto-changelog credit')
-    .option('--handlebars-setup <file>', 'handlebars setup file')
+    .option('--handlebars-setup <file>', '指定 Handlebars 设置脚本文件')
     .option('--append-git-log <string>', '要附加到 git log 命令的字符串')
     .option('--append-git-tag <string>', '要附加到 git tag 命令的字符串')
     .option('--prepend', '将 changeLog 添加到输出文件')
