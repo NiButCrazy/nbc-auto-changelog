@@ -8,15 +8,15 @@
 ## 介绍
 **最基本的使用方法**
 
+首先编辑 `package.json`，加入 `version` 运行脚本命令
 ```json
-// package.json
 {
     "scripts": {
-    	"version": "nbc-auto-changelog -p && git add CHANGELOG.md"
-  	}
+      "version": "nbc-auto-changelog -p && git add CHANGELOG.md"
+    }
 }
 ```
-**接着终端输入**
+**最后终端输入**
 ```shell
 npm version
 ```
