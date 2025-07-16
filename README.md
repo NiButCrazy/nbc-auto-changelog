@@ -6,7 +6,23 @@
 [![Latest npm version](https://img.shields.io/npm/v/nbc-auto-changelog.svg)](https://www.npmjs.com/package/nbc-auto-changelog)
 
 ## 介绍
-使用方法和 [auto-changelog](https://github.com/cookpete/auto-changelog) 原版本相同,这里不再赘述，值得注意的只有两点：
+**最基本的使用方法**
+
+```json
+// package.json
+{
+    "scripts": {
+    	"version": "nbc-auto-changelog -p && git add CHANGELOG.md"
+  	}
+}
+```
+**接着终端输入**
+```shell
+npm version
+```
+>就可以实现 `package.json` 里的 `version` 版本自动更新，然后 `CHANGELOG.md` 会自动生成，并为当新版本 `version` 生成一个新 **标签(tag)** 
+
+具体其他**使用方法**与**配置**和 [auto-changelog](https://github.com/cookpete/auto-changelog) 原版本**相同**,这里不再赘述，值得注意的只有两点：
 
 1. 最好填写 **git 远程仓库名**，不然没法链接到 `commit`、 `issue` 等超链接
 
