@@ -3,3 +3,6 @@ yarn.lock
 npm-debug.log
 /coverage
 .idea
+desktop.ini
+yarn.lock
+package-lock.json
