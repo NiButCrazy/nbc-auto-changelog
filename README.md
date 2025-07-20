@@ -28,7 +28,7 @@ npm install nbc-auto-changelog -D  // 作为开发环境依赖使用
 ```
 **最后终端输入**
 ```shell
-npm version
+npm version [新版本号]
 ```
 >就可以实现 `package.json` 里的 `version` 版本自动更新，然后 `CHANGELOG.md` 会自动生成，并为当新版本 `version` 生成一个新 **标签(tag)** 
 
