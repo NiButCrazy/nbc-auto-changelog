@@ -1,5 +1,6 @@
 const readline = require('readline')
 const fs = require('fs')
+const process = require('process')
 const { spawn } = require('child_process')
 
 const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -80,10 +81,12 @@ const readFile = (path) => {
   })
 }
 
+const isWindows = process.platform === 'win32';
 const writeFile = (path, data) => {
+  const finalData = isWindows ? data.replace(/\n/g, '\r\n') : data;
   return new Promise((resolve, reject) => {
-    fs.writeFile(path, data, createCallback(resolve, reject))
-  })
+    fs.writeFile(path, finalData, createCallback(resolve, reject));
+  });
 }
 
 const fileExists = (path) => {
