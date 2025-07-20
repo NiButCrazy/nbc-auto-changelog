@@ -6,6 +6,16 @@
 [![Latest npm version](https://img.shields.io/npm/v/nbc-auto-changelog.svg)](https://www.npmjs.com/package/nbc-auto-changelog)
 
 ## 介绍
+
+**安装**
+```
+npm -g install nbc-auto-changelog  // 全局使用
+```
+或者
+```
+npm install nbc-auto-changelog -D  // 作为开发环境依赖使用
+```
+
 **最基本的使用方法**
 
 首先编辑 `package.json`，加入 `version` 运行脚本命令
@@ -18,7 +28,7 @@
 ```
 **最后终端输入**
 ```shell
-npm version
+npm version [新版本号]
 ```
 >就可以实现 `package.json` 里的 `version` 版本自动更新，然后 `CHANGELOG.md` 会自动生成，并为当新版本 `version` 生成一个新 **标签(tag)** 
 
