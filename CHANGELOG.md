@@ -4,10 +4,12 @@
 
 
 
-## [v1.0.2](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.0.2...v1.0.2) -  v1.0.2..
+## [v1.0.3](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.0.2...v1.0.3) -  v1.0.2..
 
 #### :sparkles: 新功能
 
+-  小修 &nbsp;- by @[NiButCrazy](https://github.com/NiButCrazy) [`(8009752)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/8009752722cac6a85eaafecc7d5195fd22f6a8c5)
+
 -  支持根据平台决定生成的日志文件的换行符 &nbsp;- by @[NiButCrazy](https://github.com/NiButCrazy) [`(11922e7)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/11922e7151f683138d60c72c01d9d323400e9274)
 
 #### :package: 杂项
