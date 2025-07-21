@@ -81,6 +81,7 @@ const readFile = (path) => {
   })
 }
 
+// 根据平台生成对应的换行符
 const isWindows = process.platform === 'win32';
 const writeFile = (path, data) => {
   const finalData = isWindows ? data.replace(/\n/g, '\r\n') : data;
