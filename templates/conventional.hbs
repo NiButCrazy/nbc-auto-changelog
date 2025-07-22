@@ -89,52 +89,53 @@ Example Definitions
   {{! List commits with 'breaking:' or 'Breaking change:' anywhere in the message under a heading}}
 
   {{#commit-list commits heading='#### :rotating_light: 重大更改' message='[bB]reaking [cC]hange:|[bB]reaking:' }}
-    - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+    - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
     {{moreDetail message}}
   {{/commit-list}}
   {{! List commits organised under a heading, but not those already listed in the breaking section }}
       {{#commit-list commits heading='#### :sparkles: 新功能' message='^[fF]eat:|[fF]eat\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :bug: 修复' message='^[fF]ix:|^[fF]ix\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :package: 杂项' message='^[cC]hore:|^[cC]hore\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :book: 文档' message='^[dD]ocs:|^[dD]ocs\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :recycle: 重构' message='^[rR]efactor:|^[rR]efactor\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :mega: 测试' message='^[tT]est:|^[tT]est\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :books: 样式' message='^[sS]tyle:|^[sS]tyle\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :wrench: 依赖 | 构建' message='^[bB]uild:|^[bB]uild\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :zap: 优化' message='^[pP]erf:|^[pP]erf\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :globe_with_meridians: 国际化' message='^[iI]18n:|^[iI]18n\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :cyclone: 整体修改' exclude='[bB]reaking [cC]hange:|[bB]reaking:|^[fF]eat:|^[fF]eat\(|^[fF]ix:|^[fF]ix\(|^[cC]hore:|^[cC]hore\(|^[dD]ocs:|^[dD]ocs\(|^[rR]efactor:|^[rR]efactor\(|^[tT]est:|^[tT]est\(|^[sS]tyle:|^[sS]tyle\(|^[pP]erf:|^[pP]erf\(|^[iI]18n:|^[iI]18n\(|^[bB]uild:|^[bB]uild\('}}
-        - {{subject}} &nbsp;- by @{{githubLink author}} [`({{shorthash}})`]({{href}})
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
+
 {{/each}}

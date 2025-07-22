@@ -87,7 +87,7 @@ Handlebars.registerHelper('init', function (data) {
 // 作者添加GitHub链接
 Handlebars.registerHelper('githubLink', function (auther) {
   let new_auther = auther.split(" ").join("")
-  return `[${auther}](https://github.com/${new_auther})`
+  return `[@${auther}](https://github.com/${new_auther})`
 })
 // 美化日期
 Handlebars.registerHelper('myDate', function (date) {
