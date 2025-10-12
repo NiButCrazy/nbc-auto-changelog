@@ -1,6 +1,13 @@
-## 更新日志
+## :memo: 更新日志
 
-## [v1.0.5](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.0.4...v1.0.5) -  v1.0.4..
+## [v1.1.0](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.0.5...v1.1.0) -  v1.0.5..
+
+#### :sparkles: 新功能
+
+-  添加了 CI/CD &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(79f8b43)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/79f8b43c637138914faee3b55ad4d7e509ab2484)
+	-  顺便修了点样式
+
+## [v1.0.5](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.0.4...v1.0.5) -  2025/07/22 
 
 #### :books: 样式
 

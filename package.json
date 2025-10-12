@@ -1,6 +1,6 @@
 {
   "name": "nbc-auto-changelog",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "一键生成 CHANGELOG.md 工具，基于开源项目 auto-changelog",
   "main": "./src/index.js",
   "bin": {
