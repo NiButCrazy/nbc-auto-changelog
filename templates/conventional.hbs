@@ -1,4 +1,4 @@
-## 更新日志
+## :memo: 更新日志
 {{init this}}
 {{!--
 Introduction
@@ -126,6 +126,10 @@ Example Definitions
         {{moreDetail message}}
       {{/commit-list}}
       {{#commit-list commits heading='#### :zap: 优化' message='^[pP]erf:|^[pP]erf\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
+        - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
+        {{moreDetail message}}
+      {{/commit-list}}
+      {{#commit-list commits heading='#### :hammer: CI / CD' message='^[cC]i:|^[cC]i\(' exclude='[bB]reaking [cC]hange:|[bB]reaking:'}}
         - {{subject}} &nbsp;- by {{githubLink author}} [`({{shorthash}})`]({{href}})
         {{moreDetail message}}
       {{/commit-list}}
