@@ -1,6 +1,12 @@
 ## :memo: 更新日志
 
-## [v1.1.3](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.2...v1.1.3) -  v1.1.2..
+## [v1.1.4](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.3...v1.1.4) -  v1.1.3..
+
+#### :hammer: CI / CD
+
+- ci: 工作流更新node &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(220ea4a)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/220ea4ac3033fcc56f9e5c73d408317c5be689d2)
+
+## [v1.1.3](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.2...v1.1.3) -  2026/03/31 
 
 ## [v1.1.2](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.1...v1.1.2) -  2025/11/02 
 
