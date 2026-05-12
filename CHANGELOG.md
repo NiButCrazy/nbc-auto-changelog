@@ -1,6 +1,12 @@
 ## :memo: 更新日志
 
-## [v1.1.8](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.6...v1.1.8) -  v1.1.6..
+## [v1.1.9](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.8...v1.1.9) -  v1.1.8..
+
+#### :wrench: 依赖 | 构建
+
+-  忘记添加 lock 了 &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(3ab9412)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/3ab94125797edf1c7a687682003cfa66283159ae)
+
+## [v1.1.8](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.6...v1.1.8) -  2026/05/12 
 
 #### :mega: 测试
 
