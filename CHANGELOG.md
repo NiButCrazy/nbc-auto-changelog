@@ -1,6 +1,12 @@
 ## :memo: 更新日志
 
-## [v1.1.12](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.11...v1.1.12) -  v1.1.11..
+## [v1.1.13](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.12...v1.1.13) -  v1.1.12..
+
+#### :hammer: CI / CD
+
+- ci: 莫名其妙的问题 &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(d91f20e)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/d91f20ee1539967fde3c9c8ca639d80372377866)
+
+## [v1.1.12](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.11...v1.1.12) -  2026/05/12 
 
 #### :bug: 修复
 
