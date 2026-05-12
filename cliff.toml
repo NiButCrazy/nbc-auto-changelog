@@ -21,15 +21,15 @@ body = """
         {% if commit.breaking %}:rotating_light:[**破坏性改动**] {% endif %}\
         {{ commit.message | replace(from="<REPO>", to=self::remote_url()) | upper_first }} -\
          {% if commit.remote.username %} by @{{ commit.remote.username }}{%- endif %} \
-        [({{ commit.id | truncate(length=7, end="") }})]({{ self::remote_url() }}/commit/{{ commit.id }})\
+        [`({{ commit.id | truncate(length=7, end="") }})`]({{ self::remote_url() }}/commit/{{ commit.id }})\
 {% endmacro -%}
 
 {% if version %}\
     {% if previous.version %}\
-        ## [{{ version | trim_start_matches(pat="v") }}]\
+        ## [{{ version }}]\
           ({{ self::remote_url() }}/compare/{{ previous.version }}..{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
     {% else %}\
-        ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+        ## [{{ version }}] - {{ timestamp | date(format="%Y-%m-%d") }}
     {% endif %}\
 {% else %}\
     ## [ 未发布 ]
@@ -100,25 +100,25 @@ commit_preprocessors = [
 # 将 commit 分配到不同的分组。
 # 可选地设置 commit 的范围，并可决定是否将 commit 排除在后续处理之外。
 commit_parsers = [
-    { message = "^feat", group = "<!-- 0 -->:sparkles: 新功能" },
-    { message = "^fix", group = "<!-- 1 -->:bug: 修复" },
-    { message = "^improve|^imp", group = "<!-- 4 -->:fire: 优化" },
-    { message = "^refactor", group = "<!-- 2 -->:recycle: 重构" },
-    { message = "^doc", group = "<!-- 3 -->book: 文档" },
-    { message = "^perf", group = "<!-- 4 -->:zap: 性能" },
-    { message = "^style", group = "<!-- 5 -->:art: 样式" },
-    { message = "^build", group = "<!-- 5 -->:wrench: 依赖 | 构建" },
-    { message = "^test", group = "<!-- 6 -->:alembic: 测试" },
-    { message = "^chore\\(release\\): prepare for", skip = true },
-    { message = "^chore\\(tag\\)", skip = true },
-    { message = "^chore\\(deps.*\\)", skip = true },
-    { message = "^chore\\(pr\\)", skip = true },
-    { message = "^chore\\(pull\\)", skip = true },
-    { message = "^chore\\(npm\\).*yarn\\.lock", skip = true },
-    { message = "^chore", group = "<!-- 7 -->:package: 杂项" },
-    { message = "^ci", group = "<!-- 7 -->:hammer: 工作流" },
-    { message = "^i18n", group = "<!-- 8 -->:globe_with_meridians: 国际化" },
-    { message = "^revert", group = "<!-- 9 -->:rewind: 回退" },
+    { message = "^[Ff]eat", group = "<!-- 0 -->:sparkles: 新功能" },
+    { message = "^[Ff]ix", group = "<!-- 1 -->:bug: 修复" },
+    { message = "^[Ii]mprove|^[Ii]mp", group = "<!-- 4 -->:fire: 优化" },
+    { message = "^[Rr]efactor", group = "<!-- 2 -->:recycle: 重构" },
+    { message = "^[Dd]oc", group = "<!-- 3 -->:book: 文档" },
+    { message = "^[Pp]erf", group = "<!-- 4 -->:zap: 性能" },
+    { message = "^[Ss]tyle", group = "<!-- 5 -->:art: 样式" },
+    { message = "^[Bb]uild", group = "<!-- 5 -->:wrench: 依赖 | 构建" },
+    { message = "^[Tt]est", group = "<!-- 6 -->:alembic: 测试" },
+    { message = "^[Cc]hore\\(release\\): prepare for", skip = true },
+    { message = "^[Cc]hore\\(tag\\)", skip = true },
+    { message = "^[Cc]hore\\(deps.*\\)", skip = true },
+    { message = "^[Cc]hore\\(pr\\)", skip = true },
+    { message = "^[Cc]hore\\(pull\\)", skip = true },
+    { message = "^[Cc]hore\\(npm\\).*yarn\\.lock", skip = true },
+    { message = "^[Cc]hore", group = "<!-- 7 -->:package: 杂项" },
+    { message = "^[Cc]i", group = "<!-- 7 -->:hammer: 工作流" },
+    { message = "^[Ii]18n", group = "<!-- 8 -->:globe_with_meridians: 国际化" },
+    { message = "^[Rr]evert", group = "<!-- 9 -->:rewind: 回退" },
 ]
 # 如果设置为 true，任何破坏性更改都将被保护，避免由于任何提交解析器而被跳过
 protect_breaking_commits = false
