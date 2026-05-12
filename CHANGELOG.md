@@ -525,9 +525,9 @@
 - Generate changelog on version &nbsp;- by [@Pete Cook](https://github.com/PeteCook) [`(fd6f230)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/fd6f2300433d7cb5f9434b2fe64e1f2d9823fc93)
 
 - Logical handling of --starting-version [#227](https://github.com/NiButCrazy/nbc-auto-changelog/issues/227) &nbsp;- by [@Kevin Van Lierde](https://github.com/KevinVanLierde) [`(417354c)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/417354cec0fb2822c756c935c8a9cb324dbdbc67)
-	-  * Logical handling of --starting-version
-	-  Fixes #221
-	-  * Tidy up
+	-  * Logical handling of --starting-version
+	-  Fixes #221
+	-  * Tidy up
 	-  Co-authored-by: Pete Cook &lt;pete@cookpete.com&gt;
 
 - Add ending-version option &nbsp;- by [@Chuck Mastrandrea](https://github.com/ChuckMastrandrea) [`(c2bb8c5)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/c2bb8c59e758e11197706c36e93f31921d02f37a)
