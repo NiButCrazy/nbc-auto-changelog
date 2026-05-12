@@ -32,7 +32,7 @@ body = """
         ## [{{ version }}] - {{ timestamp | date(format="%Y-%m-%d") }}
     {% endif %}\
 {% else %}\
-    ## [ 未发布 ]
+    ## :bookmark: [最新版本]()
 {% endif %}\
 
 {% for group, commits in commits | group_by(attribute="group") %}
