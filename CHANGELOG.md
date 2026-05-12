@@ -1,6 +1,20 @@
 ## :memo: 更新日志
 
-## [v1.1.5](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.4...v1.1.5) -  v1.1.4..
+## [v1.1.6](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.5...v1.1.6) -  v1.1.5..
+
+#### :sparkles: 新功能
+
+-  添加 cliff.toml 作为配置项存储 &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(a911bca)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/a911bcacb65d26f635424a833ab459ed95b64f00)
+
+#### :bug: 修复
+
+-  修复 cliff 配置的些许问题 &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(0bf8677)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/0bf86778d0f8545fa9877dba5521c48913fa7631)
+
+#### :package: 杂项
+
+-  更新日志翻新 &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(3ac0f96)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/3ac0f962bc8fa1aabd8a5ba53ce29f294c07894e)
+
+## [v1.1.5](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.4...v1.1.5) -  2026/03/31 
 
 #### :hammer: CI / CD
 
