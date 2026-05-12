@@ -20,4 +20,4 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Publish
-        run: pnpm publish --no-git-check
+        run: npm publish
