@@ -1,6 +1,12 @@
 ## :memo: 更新日志
 
-## [v1.1.10](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.9...v1.1.10) -  v1.1.9..
+## [v1.1.11](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.10...v1.1.11) -  v1.1.10..
+
+#### :hammer: CI / CD
+
+- ci: 忘记这是js了 &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(cbfec6f)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/cbfec6f4589966763e46ee2b9c26950084a0b86a)
+
+## [v1.1.10](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.9...v1.1.10) -  2026/05/12 
 
 #### :hammer: CI / CD
 
