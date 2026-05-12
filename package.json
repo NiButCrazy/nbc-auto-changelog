@@ -16,7 +16,7 @@
     "test": "cross-env NODE_ENV=test mocha -r @babel/register test",
     "test-coverage": "cross-env NODE_ENV=test nyc mocha test",
     "report-coverage": "nyc report --reporter=json && codecov -f coverage/coverage-final.json",
-    "version": "node src/index.js -p && git add CHANGELOG.md",
+    "version": "git cliff && git add CHANGELOG.md",
     "generate-test-data": "cross-env NODE_ENV=test node scripts/generate-test-data.js"
   },
   "author": "Ni But Crazy (https://github.com/NiButCrazy)",
