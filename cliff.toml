@@ -100,7 +100,7 @@ commit_preprocessors = [
 # 将 commit 分配到不同的分组。
 # 可选地设置 commit 的范围，并可决定是否将 commit 排除在后续处理之外。
 commit_parsers = [
-    { message = "^[Ff]eat", group = "<!-- 0 -->:sparkles: 新功能" },
+    { message = "^[Ff]eat", group = "<!-- 0 -->:sparkles: 新特性" },
     { message = "^[Ff]ix", group = "<!-- 1 -->:bug: 修复" },
     { message = "^[Ii]mprove|^[Ii]mp", group = "<!-- 4 -->:fire: 优化" },
     { message = "^[Rr]efactor", group = "<!-- 2 -->:recycle: 重构" },
