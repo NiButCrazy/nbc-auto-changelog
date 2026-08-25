@@ -1,6 +1,12 @@
 ## :memo: 更新日志
 
-## [v1.1.13](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.12...v1.1.13) -  v1.1.12..
+## [v1.1.14](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.13...v1.1.14) -  v1.1.13..
+
+#### :sparkles: 新特性
+
+-  修改描述 &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(4714aa9)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/4714aa9f6b05f1b8ed2272ab9fce7ac097ecdba3)
+
+## [v1.1.13](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.12...v1.1.13) -  2026/05/12 
 
 #### :hammer: CI / CD
 
@@ -42,7 +48,7 @@
 
 ## [v1.1.6](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.1.5...v1.1.6) -  2026/05/12 
 
-#### :sparkles: 新功能
+#### :sparkles: 新特性
 
 -  添加 cliff.toml 作为配置项存储 &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(a911bca)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/a911bcacb65d26f635424a833ab459ed95b64f00)
 
@@ -82,7 +88,7 @@
 
 ## [v1.1.0](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.0.5...v1.1.0) -  2025/10/12 
 
-#### :sparkles: 新功能
+#### :sparkles: 新特性
 
 -  添加了 CI/CD &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(79f8b43)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/79f8b43c637138914faee3b55ad4d7e509ab2484)
 	-  顺便修了点样式
@@ -107,7 +113,7 @@
 
 ## [v1.0.3](https://github.com/NiButCrazy/nbc-auto-changelog/compare/v1.0.2...v1.0.3) -  2025/07/20 
 
-#### :sparkles: 新功能
+#### :sparkles: 新特性
 
 -  小修 &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(8009752)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/8009752722cac6a85eaafecc7d5195fd22f6a8c5)
 
@@ -176,7 +182,7 @@
 - Support modifying commit limit with --commit-limit
 - Update dependencies to enable Greenkeeper 🌴
 
-#### :sparkles: 新功能
+#### :sparkles: 新特性
 
 -  添加自定义模板 &nbsp;- by [@NiButCrazy](https://github.com/NiButCrazy) [`(45eaed8)`](https://github.com/NiButCrazy/nbc-auto-changelog/commit/45eaed8c09419db5cb35cf0cbcfc4ff47761e9f1)
 	-  feat: 整体汉化，添加并修改许多功能
